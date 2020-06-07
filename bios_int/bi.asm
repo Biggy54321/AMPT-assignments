@@ -23,6 +23,7 @@ bits 16
 	    mov ax, BOOT_SECTOR_BASE    ; Init ax to the boot sector load addr
         shl ax, 0x4                 ; Shift the contents to left by four
 	    add ax, BOOT_SECTOR_SIZE    ; Add 512 to the boot sector load addr
+        shr ax, 0x4
 	    mov ss, ax                  ; Init stack segment base at the end of it
 	    mov sp, STACK_SEGMENT_SIZE  ; Initialize a stack of 4K size
     %endmacro
